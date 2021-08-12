@@ -16,14 +16,14 @@
 
     <section class="calculator">
         <form>
-            <input type="text" name="" id="" class="screen">
+            <input type="text" name="" id="" class="screen" onkeypress="return false">
         </form>
         <div class="buttons">
             <!-- light-blue -->
-            <button type="button" class="btn btn-light-blue" data-num="*">*</button>
-            <button type="button" class="btn btn-light-blue" data-num="/">/</button>
-            <button type="button" class="btn btn-light-blue" data-num="-">-</button>
-            <button type="button" class="btn btn-light-blue" data-num="+">+</button>
+            <button type="button" class="btn btn-light-blue operation--js" data-num=" * ">*</button>
+            <button type="button" class="btn btn-light-blue operation--js" data-num=" / ">/</button>
+            <button type="button" class="btn btn-light-blue operaton--js" data-num=" - ">-</button>
+            <button type="button" class="btn btn-light-blue operation--js" data-num=" + ">+</button>
             <!-- blue buttons -->
             <button type="button" class="btn btn-blue" data-num=".">.</button>
             <button type="button" class="btn btn-blue" data-num="9">9</button>
@@ -43,7 +43,9 @@
         </div>
     </section>
 
-    <script src="calculator.js"></script>
+    <script src="./dist/bundle.js"></script>
+    
+    
 </body>
 
 </html>
