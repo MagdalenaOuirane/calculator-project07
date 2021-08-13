@@ -34,7 +34,7 @@ const calculate = (calculations) => {  //" 1 + 2"
             } else if (operation === "*") {
                 return n1 * n2
             } else if (operation === "/" && n2 === 0) {
-                throw Error("Error")
+                return "Error"
             } else if (operation === "/") {
                 return n1 / n2
            

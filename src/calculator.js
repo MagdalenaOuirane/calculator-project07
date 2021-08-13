@@ -23,32 +23,37 @@ allButtons.forEach((btn) => {
     console.log(btn)
     let currentValue = e.target.dataset.num;
     console.log('Target value:', currentValue)
-    
+
     if (currentValue === '.' && haveDot === false) {
       haveDot = true;
     } else if (currentValue === '.' && haveDot === true) {
       return
     }
 
-    if ((currentValue === ' - ') && (([" + ", " - ", " *" , " / "].indexOf(lastValue) > -1))) {
+    if ((currentValue === ' - ') && (([" + ", " - ", " *", " / "].indexOf(lastValue) > -1))) {
       currentValue = '-'
     } else if (currentValue === " - " && lastValue === '') {
       currentValue = '-'
     } else if ((currentValue === " + " || currentValue === " * " || currentValue === " / ") && (lastValue === " - " || lastValue === " + " || lastValue === " * " || lastValue === " / ")) {
       return
-    } 
-    
-    input.value += currentValue
+    }
+
+    if (lastValue === " - " || lastValue === " + " || lastValue === " * " || lastValue === " / ") {
+      haveDot = false;
+    }
+
+    input.value += currentValue// "222+333"
     console.log(input.value)
     console.log(input.value.split(" ").length);
 
-    if (([" + ", " - ", " *" , " / "].indexOf(currentValue) > -1) && (input.value.split(" ").length >3)) {
-        let result = calculate(input.value);
-        console.log(result)
-        input.value = result + currentValue;
+    if (([" + ", " - ", " *", " / "].indexOf(currentValue) > -1) && (input.value.split(" ").length > 3)) {
+      let result = calculate(input.value);
+      console.log(result)
+      input.value = result + currentValue;
 
-      } 
-      lastValue = currentValue;
+    }
+    lastValue = currentValue;
+
   })
 })
 
@@ -62,6 +67,7 @@ equalBtn.addEventListener('click', (e) => {
     let result = calculate(input.value);
     console.log(result)
     input.value = result;
+    haveDot=false;
   }
 
 });

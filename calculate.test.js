@@ -23,11 +23,3 @@ test('Throwing an error when given wrong operation for 2 numbers', () => {
 })
 
 
-test('Adding 3 numbers', () => {
-  expect(calculate("3 + 3 + 3")).toBe(9)
-})
-
-// testing adding two dots in jsdom
-
-
-
